@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tap Music</title>
+    <style>
+        .app{
+            display:flex;
+            justify-content: space-between;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            text-align: center;
+        }
+       
+        .pads{
+            width: 100%;
+            display: flex;
+        }
+        .pads > div{
+            width: 150px;
+            height: 100px;
+            display: flex;
+            flex: 1;
+        }
+        .pad1{
+            background: chocolate;
+        }
+        .pad2{
+            background: coral;
+        }
+        .pad3{
+            background: crimson;
+        }
+        .pad4{
+            background: darkgoldenrod;
+        }
+        .pad5{
+            background: darkred;
+        }
+        .pad6{
+            background: deepskyblue;
+        }
+        
+#visuals > div {
+  position: absolute;
+  bottom: 0%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transform: scale(1);
+  z-index: -1;
+}
+
+
+@keyframes jump {
+  0% {
+    bottom: 0%;
+    left: 20%;
+  }
+  50% {
+    bottom: 50%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 00%;
+    left: 80%;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <h1>TAP Music</h1>
+            <p>tap to play</p>
+        </div>
+        <div id="visuals"></div>
+        <div class="pads">
+            <div class="pad1">
+                <audio src="sounds/bubbles.mp3"></audio>
+            </div>
+            <div class="pad2">
+                <audio src="sounds/moon.mp3"></audio>
+            </div>
+            <div class="pad3">
+                <audio src="sounds/clay.mp3"></audio>
+            </div>
+            <div class="pad4">
+                <audio src="sounds/confetti.mp3"></audio>
+            </div>
+            <div class="pad5">
+                <audio src="sounds/glimmer.mp3"></audio>
+            </div>
+            <div class="pad6">
+                <audio src="sounds/ufo.mp3"></audio>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

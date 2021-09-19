@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    <title>GITHUB FINDER</title>
+</head>
+<body>
+
+    <nav class="navbar bg-primary navbar-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand">GITHUB FINDER</a>
+        </div>
+    </nav>
+
+    <div class="container searchContainer mt-5">
+        <div class="search card card-body">
+            <h1>Search Github Users</h1>
+            <p class="lead">Enter a username to fetch a user profile and repose</p>
+            <input placeholder="Github username..." type="text" id="searchUser" class="form-control">
+        </div>
+    </div>
+
+    <div class="profile"></div>
+    <div class="repos"></div>
+
+    <footer class="bg-light mt-5 p-3">
+        <h3 class="text-center">GITHUB FINDER &copy; 2019</h3>
+    </footer>
+
+
+    <script src="github.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

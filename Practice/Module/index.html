@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .card{
+            width: 500px;
+            height: 400px;
+        }
+        .card-info p{
+            background: lightblue;
+            color: black;
+            font-weight: bold;
+        }
+        .cards-section{
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;            
+        }
+        .cards-section .card{
+            margin-left: 20px;
+        }
+        .card:first-child{
+            margin-left: 0!important;
+        }
+        
+    </style>
+</head>
+<body>
+
+
+    <div class="container text-center">
+        <header class="">
+            <h1>YOUTUBE CHANNEL DETAILS</h1>
+            <p class="text-capitalize">my youtube profile details</p>
+        </header>
+        <hr style="border-bottom: 2px solid darkdrey;">
+
+        <!-- <button class="authorize" onclick="loadClient()">authorize and load</button> -->
+        <button class="execute btn btn-outline-dark">execute</button>
+        <section class="cards-section">
+
+        </section>
+    </div>
+   
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="app.js"></script>
+    <script src="api.js"></script>
+</body>
+</html>

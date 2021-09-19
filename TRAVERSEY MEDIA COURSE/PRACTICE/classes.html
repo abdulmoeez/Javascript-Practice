@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        
+        
+        class Person{
+            constructor(firstname, lastname){
+                this.firstname = firstname;
+                this.lastname = lastname;
+                
+            }
+            isMarried(){
+                const info = {
+                    'married':true,
+                    'year':2002
+
+                }
+                return info;
+            }
+            greeting(){
+                return `Welcome Back ${this.firstname} ${this.lastname}`;
+            }
+
+        }
+        const person1 = new Person('abdul','moeez');
+        console.log(person1);
+        console.log(person1.isMarried().year);
+
+
+    </script>
+    
+</body>
+</html>

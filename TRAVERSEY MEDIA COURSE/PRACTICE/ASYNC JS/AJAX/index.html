@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link>
+</head>
+
+<body>
+
+    <div>
+        <p></p>
+    </div>
+
+<script>
+  
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'data.txt', true);
+
+    xhr.onprogress = function(){
+        window.value = 'This is the data, ' + this.responseText;
+    }
+
+    xhr.onload = function(){
+        console.log(xhr.readyState);
+        if(this.status === 200){
+            console.log(2);
+            console.log(this.responseText);
+            document.querySelector("p").innerHTML = '';
+            document.querySelector("p").innerHTML = window.value;
+        }
+    }
+    xhr.send();
+
+
+    // readystate values
+    // 0: request not initialised
+    // 1:sever connection successful
+    // 2: request recieved
+    // 3: pocessing request
+    // 4: successfull, response is ready
+
+
+    //
+
+</script>
+</body>
+</html>

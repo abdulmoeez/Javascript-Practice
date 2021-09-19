@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>Jokes Generator</title>
+</head>
+<body class="text-center">
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="text-center text-dark">CHUCK NORRIS JOKES</h1>
+        </div>
+        <form>
+        <div class="input-group">
+            <label for="joke">Number </label>
+            <input placeholder="" id="joke" class="form-control ml-2">
+        </div>
+        <button class="btn btn-success btn-block mt-3 get-joke">Generate</button>
+        </form>
+        <div>
+            <ul class="ul text-left"></ul>
+        </div>
+    </div>
+
+
+    <script>
+        // event for click
+        document.querySelector(".get-joke").addEventListener("click", getjoke);
+
+
+        function getjoke(e){
+            const number = document.querySelector("#joke").value;
+            const num = parseInt(number);
+
+            // CALLINNG HTTP REQUEST
+            const xhr = new XMLHttpRequest();
+            
+            xhr.open('GET', `http://api.icndb.com/jokes/random/${num}`, true);
+
+            xhr.onload = function(){
+                let output = '';
+                if(this.status === 200){
+                    const response = JSON.parse(this.responseText);
+                    console.log(response);
+                    console.log(response.value);
+                    console.log(response.value.joke);
+                    response.value.forEach(function(joke){
+                        output+=`<li>${joke.joke}</li>`;
+                        document.querySelector(".ul").innerHTML = output;
+                        
+                    });
+                }
+               
+            }
+            xhr.send();
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>

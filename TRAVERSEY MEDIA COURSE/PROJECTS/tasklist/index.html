@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">     
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<div class="card">
+				<div class="ml-4">
+				<h1 class="lead heading mt-2">Task List</h1>
+				<form action="" method="post" id="form">
+					<input type="text" name="add-task" id="add-task" class="form-control mt-5" placeholder="Add Task">
+					<button class="btn btn-info mt-2 btn-lg">Add Task</button>
+				</form>
+				<br>
+				<br>
+
+			</div>
+			</div>
+			<div class="card">
+				<div class="col-md-12">
+					<div class="">
+						<h5 class="lead heading mt-2">Tasks</h5>
+						<form method="post">
+							<input type="text" class="form-control mt-5" placeholder="Filter Task" name="filter-tasks" id="filter-tasks">
+							<ul class="collection"></ul>
+							<button class="btn btn-danger mt-2 btn-lg clear">Clear Task</button>
+						</form>
+						<br>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

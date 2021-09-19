@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  </head>
+  <body>
+    <header class="navbar navbar-dark" style="background:black">
+      <h1 class="navbar-brand text-center">CRUD APPLICATION</h1>
+    </header>
+    <section class="container">
+        <card class="card card-body">
+          <form>
+            <div class="form-text text-center text-capitalize">
+                <h1 class="">Say Something</h1>
+                <p class="lead">Share your message instantly with anyone.</p>
+            </div>
+            <div class="alert-div"></div>
+            <div class="input-group"> 
+                <input class="form-control" placeholder="Post Title" id="title" required>
+            </div>
+            <div class="input-group">
+                <textarea class="form-control mt-2" id="body" placeholder="Post Body" required></textarea>
+            </div>
+            <input hidden class="id">
+            <button class="btn btn-dark mt-2 btn-block btnSubmit" type="submit">Post</button>
+            <span class="form-end"></span>
+          </form>
+        </card>
+
+        <div class="posts"> 
+
+        </div>
+        
+    </section>
+    <footer class="p-2 bg-dark">
+      <p class="text-white text-center">&copy; 2019 CRUD APP, SUP KID</p>
+    </footer>
+
+    <script src="build/app.bundle.js"></script>
+  </body>
+</html>

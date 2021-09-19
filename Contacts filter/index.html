@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<title>Contacts</title>
+	<style type="text/css">
+		.list{
+			color: blue;
+			margin-left:10px;
+			text-transform: capitalize;
+			font-weight:  bold;
+			font-family: arial;
+		}
+		li h5{
+			font-weight: 800;
+		}
+		.list:hover{
+			background-color: lightgrey;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+     <h1 class="text-danger text-center container display-4">My Contacts</h1>
+       <input  id="form" class="form-control transparent-input " type='text' name='name' placeholder="Search"  style="border:none; background:transparent;margin-top: 10px;margin-bottom: 10px;">
+
+     <div>
+     	<ul id="ul" class="list-unstyled list-group">
+     		<li class="list-group-item"><h5>A</h5></li>
+     		<li class="list-group-item list">ali</li>
+     		<li class="list-group-item list">ameen</li>
+     		<li class="list-group-item list">amna</li>
+     		<li class="list-group-item list">adam</li>
+
+     		<li class="list-group-item "><h5>B</h5></li>
+     		<li class="list-group-item list">bob</li>
+     		<li class="list-group-item list">bishel</li>
+     		<li class="list-group-item list">billie ellish</li>
+     		<li class="list-group-item list">bam elister</li>
+
+     		<li class="list-group-item "><h5>C</h5></li>
+     		<li class="list-group-item list">cameron</li>
+     		<li class="list-group-item list">cameera</li>
+     		<li class="list-group-item list">cathie</li>
+     		<li class="list-group-item list">catherine</li>
+
+     		<li class="list-group-item "><h5>D</h5></li>
+     		<li class="list-group-item list">cameron</li>
+     		<li class="list-group-item list">cameera</li>
+     		<li class="list-group-item list">cathie</li>
+     		<li class="list-group-item list">catherine</li>
+
+     		<li class="list-group-item "><h5>E</h5></li>
+     		<li class="list-group-item list">endra lorie</li>
+     		<li class="list-group-item list">elish </li>
+     		<li class="list-group-item list">ellia martell</li>
+     		<li class="list-group-item list">elina</li>
+
+     		<li class="list-group-item "><h5>F</h5></li>
+     		<li class="list-group-item list">faiza</li>
+     		<li class="list-group-item list">fatima</li>
+     		<li class="list-group-item list">follie</li>
+     		<li class="list-group-item list">fanthy</li>
+
+     		<li class="list-group-item "><h5>G</h5></li>
+     		<li class="list-group-item list">gamereen</li>
+     		<li class="list-group-item list">gamora</li>
+     		<li class="list-group-item list">gathie</li>
+     		<li class="list-group-item list">ganther</li>
+
+     	</ul>
+     </div>
+ </div>
+ <script type="text/javascript">
+
+ 	const searchBar = document.querySelector('input');
+ 	searchBar.addEventListener('keyup' , eventKey);
+ 	function eventKey(e){
+ 		
+ 		let SearchFilter = e.target.value.toUpperCase();
+
+ 		let ul = document.getElementById('ul');
+
+ 		let names = ul.getElementsByTagName('li');
+
+ 		Array.from(names).forEach(function(name){
+ 			const items = name.textContent;
+
+ 			if (items.toUpperCase().indexOf(SearchFilter) > -1 ) {
+ 				name.style.display=''
+ 			} 
+ 			else{
+ 				name.style.display='none'
+
+ 			}
+ 		})
+
+
+
+ 	    	
+ 	   
+
+ 	};
+
+/* 	const ul = document.getElementById('ul');
+ 	const li = ul.getElementsByTagName('li');
+ 	Array.from(li).forEach(function(link){
+
+    const items = link.textContent.toUpperCase();
+    console.log(it)
+
+ 	})*/
+ 	
+
+
+
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+     body{
+     	background-color: #333;
+     	font-family: sans-serif;
+     	background-image: url('towns.png') ;
+
+     }	
+     .keys{
+     	position: absolute;
+     	top: 60%;
+     	right: 20%;
+     	display: grid;
+     	grid-template-columns: repeat(8,1fr);
+     	column-gap: 80px;
+
+     	text-align: center;
+     	     	transition: all 0.1;
+
+
+     }	
+
+
+     .key{
+     	border: 3px solid black;
+     	padding:10px 4px;
+
+     }
+    .playing{
+     	transform: scale(1.1);
+     	border: yellow 3px solid;
+     	text-shadow: 0 0 5px black;
+     }
+     .key kbd{
+     	color: white;
+     	font-size: 3rem;
+     	font-weight: bold;
+     }
+     .key span{
+     	color: yellow;
+     	display: block;
+     }
+
+   
+ 	</style>
+</head>
+<body>
+<div class="keys">
+	<div class="key" data-key="65">
+		<kbd>A</kbd>
+		<span class="sound">Squisshy</span>
+	</div>
+		<div class="key" data-key="76">
+		<kbd>L</kbd>
+		<span class="sound">Squisshy</span>
+	</div>
+		<div class="key" data-key="67">
+		<kbd>C</kbd>
+		<span class="sound">Squisshy</span>
+	</div>
+		<div class="key" data-key="70">
+		<kbd>F</kbd>
+		<span class="sound">Squisshy</span>
+	</div>
+		<div class="key" data-key="66">
+		<kbd>B</kbd>
+		<span class="sound">Squisshy</span>
+	</div>
+		<div class="key" data-key="84">
+		<kbd>T</kbd>
+		<span class="sound">Squisshy</span>
+	</div>
+		<div class="key" data-key="82">
+		<kbd>R</kbd>
+		<span class="sound">Squisshy</span>
+	</div>
+		<div class="key" data-key="74">
+		<kbd>J</kbd>
+		<span class="sound">Squisshy</span>
+	</div>
+</div>
+
+<audio data-key = "65" src="sounds/bubbles.mp3"></audio>
+<audio data-key = "76" src="sounds/clay.mp3"></audio>
+<audio data-key = "67" src="sounds/moon.mp3"></audio>
+<audio data-key = "70" src="sounds/ufo.mp3"></audio>
+<audio data-key = "66" src="sounds/glimmer.mp3"></audio>
+<audio data-key = "84" src="sounds/confetti.mp3"></audio>
+<audio data-key = "82" src="sounds/bubbles.mp3"></audio>
+<audio data-key = "74" src="sounds/bubbles.mp3"></audio>
+
+
+
+<script type="text/javascript">
+	window.addEventListener('keydown' , function(e){
+		const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+		const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+			console.log(key)
+
+
+		if (!audio) {
+		return;
+		}
+		else{
+			audio.currentTime = 0;
+			audio.play();
+		 key.classList.add('playing');
+
+
+			setTimeout(function(){
+			key.classList.remove('playing');
+
+              	},0.9)
+
+		}
+		key.addEventListener('click' , function (e) {
+			console.log(k)
+		})
+
+	})
+
+</script>
+</body>
+</html>

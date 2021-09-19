@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<body lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://kit.fontawesome.com/e7ece1a81e.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    .switchText-active {
+    color: #FF6600;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+input:checked + input:hover {
+  background: black;
+}
+
+
+.switchText-notActive {
+    color: #DEDEDE;
+     -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.switch {
+    position: relative;
+    width: 47px;
+    height: 24px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: -6px;
+}
+
+.switch input {
+   display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FF6600;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+input:checked + .slider {
+    background-color: #FF6600;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(21px);
+    -ms-transform: translateX(21px);
+    transform: translateX(21px);
+}
+
+input:hover + .slider:before {
+    -webkit-transform: translateX(21px);
+    -ms-transform: translateX(21px);
+    transform: translateX(21px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 36px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.switch input:disabled + span {
+    background-color: #2196F3;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.switch input:not(:checked):disabled + span {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+.myspan {
+	height: 14px;
+	width: 46px;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 14px;
+}
+.custom{
+    -webkit-transform: translateX(-21px);
+    -ms-transform: translateX(-21px);
+    transform: translateX(-21px);
+}
+</style>
+<body>
+       
+            
+            <br><br>
+            <div class="container">
+               <h1>Checkbox and Switch</h1>
+        
+                <div class="row justify-content-md-center">
+                    <div class="col-12 ">
+                        <span id="s1" class="switchText-active myspan">PICKUP</span>
+                        <label class="switch js-switch">
+                            <input class="js-check" name="switch" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <span id="s2" class="switchText-notActive myspan">DELIVERY</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+         
+
+        <script>
+        
+        
+    
+    $(document).ready(function(){
+
+   
+    $('.js-check').click(function(){
+            if($(this).prop("checked") == true){
+                $( "#s2" ).removeClass( "switchText-notActive" );
+                $( "#s2" ).addClass( "switchText-active" );
+                $( "#s1" ).removeClass( "switchText-active" );
+                $( "#s1" ).addClass( "switchText-notActive" );
+                $(".silder").addClass('custom');
+                
+                
+            }
+            
+            else if($(this).prop("checked") == false){
+                $( "#s1" ).removeClass( "switchText-notActive" );
+                $( "#s1" ).addClass( "switchText-active" );
+                $( "#s2" ).removeClass( "switchText-active" );
+                $( "#s2" ).addClass( "switchText-notActive");
+            }
+        });
+
+        if($('.js-check').prop("checked") && $('.js-check').mouseover()){
+                    console.log(4);
+                }
+
+        
+            })
+        </script>
+    
+</body>
+</html>
